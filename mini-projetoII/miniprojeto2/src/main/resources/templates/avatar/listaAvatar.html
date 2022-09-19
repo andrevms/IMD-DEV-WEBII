@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar</title>
+
+</head>
+
+<body>
+
+
+<h1>Listagem de avatares cadastrados: </h1>
+<table>
+    <thead>
+      <tr>
+        <th>Nome_Fantasia</th>
+        <th>Estudante</th>
+        <th>Curso</th>
+       <!-- <th th:text="Curso"></th>-->
+        <th>Detalhes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="avatar: ${avatares}">
+        <td th:text="${avatar.nomeFantasia}"></td>
+        <td th:text="${avatar.estudante.nome}"></td>
+        <td th:text="${avatar.estudante.curso.descricao}"></td>
+        <td>
+            <a href="">Update</a>
+            <a th:href="@{/avatar/deleteAvatar/{id}(id=${avatar.nomeFantasia})}">Deletar</a>
+        </td>
+      </tr>
+    </tbody>
+</table>
+<br><br>
+<a href="/">Home</a><br>
+<a href="showForm">Formulário de Avatares</a><sbr>
+
+</body>
+
+</html>

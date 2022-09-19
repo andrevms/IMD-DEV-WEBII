@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Curso</title>
+
+    
+</head>
+<body>
+    <form action="#" th:action="@{/curso/updateCurso}" th:object="${curso}" method="post">
+        <p><input type="hidden" th:field="*{id}"></p>
+        <p><input type="text" th:field="*{descricao}" placeholder="Insira seu nome do curso" /></p>
+        <p><input type="submit" value="Salvar" /></p>
+    </form>
+    <br><br>
+        <a href="/">Home</a><br>
+        <a href="../getListaCursos">Ver lista de cursos</a><br>
+        <a href="showForm">Formulário de cursos</a><br>
+    
+</body>
+</html>
