@@ -87,6 +87,13 @@ public class PedidoController {
         service.atualizaStatus(id, StatusPedido.valueOf(novoStatus));
     }
 
+    @PatchMapping("att/{id}/cliente/{clienteId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateCliente(@PathVariable Integer id ,
+                             @PathVariable Integer clienteId ) {
+        
+    }
+
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete( @PathVariable Integer id ){
